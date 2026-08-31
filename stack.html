@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
 
-    <!-- Google Font -->
+    <title>Stack | Hanz</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="stack.css">
 </head>
 
 <body>
 
-    <!-- Sidebar -->
     <aside class="sidebar">
 
         <div class="logo">
             <h2>Hanz</h2>
         </div>
 
-        <nav>
+        <nav aria-label="Main Navigation">
 
             <div class="section">
 
                 <a href="index.html" class="nav-item">
-                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
                     About Me
                 </a>
 
                 <a href="project.html" class="nav-item">
-                    <i class="fa-regular fa-folder"></i>
+                    <i class="fa-regular fa-folder" aria-hidden="true"></i>
                     Projects
                 </a>
 
                 <a href="experience.html" class="nav-item">
-                    <i class="fa-solid fa-briefcase"></i>
+                    <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
                     Experience
                 </a>
 
                 <a href="stack.html" class="nav-item active">
-                    <i class="fa-solid fa-code"></i>
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
                     Stack
                 </a>
 
@@ -57,12 +55,12 @@
             <div class="section">
 
                 <a href="certifications.html" class="nav-item">
-                    <i class="fa-solid fa-certificate"></i>
+                    <i class="fa-solid fa-certificate" aria-hidden="true"></i>
                     Certifications
                 </a>
 
                 <a href="affiliations.html" class="nav-item">
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
                     Affiliations
                 </a>
 
@@ -72,61 +70,63 @@
 
     </aside>
 
-    <!-- Main Content -->
     <main class="content">
 
     <h1>Stack</h1>
 
-    <p class="stack-intro">
-        Technologies, development tools, and platforms I use
-        to build and explore new projects.
+    <p class="intro">
+        Technologies, tools, and platforms I use to build
+        and explore new projects.
     </p>
 
 
-    <!-- Languages -->
+    <!-- =========================
+         Languages & Web
+         ========================= -->
 
     <section class="stack-category">
 
-        <h2>
-            <i class="fa-solid fa-code"></i>
-            Languages & Web
-        </h2>
+        <h2>Languages & Web</h2>
 
-        <div class="stack-grid">
+        <div class="card-grid">
 
-            <div class="stack-card">
-                <div class="stack-icon">
-                    <i class="fa-solid fa-code"></i>
+            <!-- C++ -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">PROGRAMMING LANGUAGE</span>
                     <h3>C++</h3>
-                    <p>Programming Language</p>
+                    <p>Used for performance-focused software, graphics, and system-level projects.</p>
                 </div>
+                <div class="card-number" aria-hidden="true">01</div>
             </div>
 
-
-            <div class="stack-card">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-html5"></i>
+            <!-- HTML -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-brands fa-html5" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">WEB DEVELOPMENT</span>
                     <h3>HTML</h3>
-                    <p>Web Development</p>
+                    <p>Used to structure websites and web-based portfolio projects.</p>
                 </div>
+                <div class="card-number" aria-hidden="true">02</div>
             </div>
 
-
-            <div class="stack-card">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-css3-alt"></i>
+            <!-- CSS -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">WEB STYLING</span>
                     <h3>CSS</h3>
-                    <p>Web Styling</p>
+                    <p>Used to design responsive layouts, interfaces, and animations.</p>
                 </div>
+                <div class="card-number" aria-hidden="true">03</div>
             </div>
 
         </div>
@@ -134,42 +134,81 @@
     </section>
 
 
-    <!-- Development Tools -->
+    <!-- =========================
+         Infrastructure & Systems
+         ========================= -->
 
     <section class="stack-category">
 
-        <h2>
-            <i class="fa-solid fa-wrench"></i>
-            Development Tools
-        </h2>
+        <h2>Infrastructure & Systems</h2>
 
-        <div class="stack-grid">
+        <div class="card-grid">
 
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-solid fa-code"></i>
+            <!-- Server Setup -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-server" aria-hidden="true"></i>
                 </div>
+                <div class="card-content">
+                    <span class="card-label">SYSTEM ADMINISTRATION</span>
+                    <h3>Server Setup</h3>
+                    <p>Configuring, managing, and maintaining local and cloud server environments.</p>
+                </div>
+                <div class="card-number" aria-hidden="true">04</div>
+            </div>
 
-                <div>
+            <!-- Networking -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <span class="card-label">NETWORKING</span>
+                    <h3>Networking</h3>
+                    <p>Understanding protocols, network architecture, routing, and system connectivity.</p>
+                </div>
+                <div class="card-number" aria-hidden="true">05</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Development Tools
+         ========================= -->
+
+    <section class="stack-category">
+
+        <h2>Development Tools</h2>
+
+        <div class="card-grid">
+
+            <!-- Microsoft Visual Studio -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <span class="card-label">IDE</span>
                     <h3>Microsoft Visual Studio</h3>
-                    <p>IDE</p>
+                    <p>Development environment used for building and debugging applications.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">06</div>
             </div>
 
-
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-solid fa-gamepad"></i>
+            <!-- Godot -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">GAME ENGINE</span>
                     <h3>Godot</h3>
-                    <p>Game Engine</p>
+                    <p>Open-source game engine used for interactive and game development.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">07</div>
             </div>
 
         </div>
@@ -177,42 +216,40 @@
     </section>
 
 
-    <!-- Version Control -->
+    <!-- =========================
+         Version Control
+         ========================= -->
 
     <section class="stack-category">
 
-        <h2>
-            <i class="fa-solid fa-code-branch"></i>
-            Version Control
-        </h2>
+        <h2>Version Control</h2>
 
-        <div class="stack-grid">
+        <div class="card-grid">
 
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-brands fa-git-alt"></i>
+            <!-- Git -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-brands fa-git-alt" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">VERSION CONTROL</span>
                     <h3>Git</h3>
-                    <p>Version Control</p>
+                    <p>Used to track changes and manage different versions of projects.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">08</div>
             </div>
 
-
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-brands fa-github"></i>
+            <!-- GitHub -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">CODE HOSTING</span>
                     <h3>GitHub</h3>
-                    <p>Code Hosting</p>
+                    <p>Used to host repositories and collaborate on software projects.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">09</div>
             </div>
 
         </div>
@@ -220,56 +257,53 @@
     </section>
 
 
-    <!-- AI Tools -->
+    <!-- =========================
+         AI Tools
+         ========================= -->
 
     <section class="stack-category">
 
-        <h2>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            AI Tools
-        </h2>
+        <h2>AI Tools</h2>
 
-        <div class="stack-grid">
+        <div class="card-grid">
 
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-solid fa-robot"></i>
+            <!-- ChatGPT -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-robot" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">AI ASSISTANT</span>
                     <h3>ChatGPT</h3>
-                    <p>AI Assistant</p>
+                    <p>Used for problem solving, learning, brainstorming, and development support.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">10</div>
             </div>
 
-
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-solid fa-pen-nib"></i>
+            <!-- Cursor -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-code-merge" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">AI CODE EDITOR</span>
                     <h3>Cursor</h3>
-                    <p>AI Code Editor</p>
+                    <p>AI-powered development environment used for coding and project work.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">11</div>
             </div>
 
-
-            <div class="stack-card">
-
-                <div class="stack-icon">
-                    <i class="fa-solid fa-sparkles"></i>
+            <!-- Gemini -->
+            <div class="tech-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
                 </div>
-
-                <div>
+                <div class="card-content">
+                    <span class="card-label">AI ASSISTANT</span>
                     <h3>Gemini</h3>
-                    <p>AI Assistant</p>
+                    <p>Used for research, brainstorming, and development assistance.</p>
                 </div>
-
+                <div class="card-number" aria-hidden="true">12</div>
             </div>
 
         </div>
@@ -279,4 +313,5 @@
 </main>
 
 </body>
+
 </html>
