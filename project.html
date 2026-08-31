@@ -75,13 +75,164 @@
     <!-- Main Content -->
     <main class="content">
 
-        <h1>Projects</h1>
+    <h1>Projects</h1>
 
-        <p>
-            List Of Projects
-        </p>
+    <p class="projects-intro">
+        collection ng mga scandal nila ranmart at joel
+    </p>
 
-    </main>
 
+    <!-- C++ Cube Project -->
+
+    <section class="project-card">
+
+        <div class="project-info">
+
+            <span class="project-category">
+                C++ · WebAssembly · 3D Graphics
+            </span>
+
+            <h2>3D Rotating Cube</h2>
+
+            <p>
+                An interactive 3D cube originally created in C++.
+                The project uses mathematical transformations to
+                rotate and project the cube, then runs in the
+                browser through WebAssembly.
+            </p>
+
+            <div class="project-tech">
+
+                <span>C++</span>
+                <span>WebAssembly</span>
+                <span>Emscripten</span>
+                <span>JavaScript</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cube-container">
+
+            <canvas
+                id="cubeCanvas"
+                width="800"
+                height="600">
+            </canvas>
+
+        </div>
+
+    </section>
+
+</main>
+<script>
+    var Module = {
+        onRuntimeInitialized: function () {
+            console.log("C++ WebAssembly loaded!");
+            startCube();
+        }
+    };
+</script>
+
+<script src="cube.js"></script>
+
+<script>
+
+    const canvas =
+        document.getElementById("cubeCanvas");
+
+    const ctx =
+        canvas.getContext("2d");
+
+    let angle = 0;
+
+
+    const edges = [
+
+        [0, 1, "magenta"],
+        [1, 2, "blue"],
+        [2, 3, "magenta"],
+        [3, 0, "blue"],
+
+        [4, 5, "blue"],
+        [5, 6, "magenta"],
+        [6, 7, "blue"],
+        [7, 4, "magenta"],
+
+        [0, 4, "magenta"],
+        [1, 5, "blue"],
+        [2, 6, "magenta"],
+        [3, 7, "blue"]
+
+    ];
+
+
+    function startCube()
+    {
+        requestAnimationFrame(drawCube);
+    }
+
+
+    function drawCube()
+    {
+
+        Module._project_cube(angle);
+
+
+        ctx.fillStyle = "black";
+
+        ctx.fillRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        for (const edge of edges)
+        {
+
+            const a = edge[0];
+            const b = edge[1];
+            const color = edge[2];
+
+
+            const ax =
+                Module._get_point_x(a);
+
+            const ay =
+                Module._get_point_y(a);
+
+
+            const bx =
+                Module._get_point_x(b);
+
+            const by =
+                Module._get_point_y(b);
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(ax, ay);
+
+            ctx.lineTo(bx, by);
+
+            ctx.strokeStyle = color;
+
+            ctx.lineWidth = 2;
+
+            ctx.stroke();
+
+        }
+
+
+        angle += 0.5;
+
+
+        requestAnimationFrame(drawCube);
+    }
+
+</script>
 </body>
 </html>
