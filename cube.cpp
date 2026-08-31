@@ -40,10 +40,10 @@ void project(
     if (z < 0.1f)
         z = 0.1f;
 
-    float scale = 250.0f / z;
+    float scale = 500.0f / z;
 
-    screenX = 400.0f + point.x * scale;
-    screenY = 300.0f - point.y * scale;
+    screenX = 500.0f + point.x * scale;
+    screenY = 400.0f - point.y * scale;
 }
 
 

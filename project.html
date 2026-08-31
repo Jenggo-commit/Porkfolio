@@ -1,235 +1,507 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+
+    <title>Portfolio - Projects</title>
+
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
+
+    <!-- Project CSS -->
     <link rel="stylesheet" href="project.css">
+
 </head>
+
 
 <body>
 
-    <!-- Sidebar -->
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
     <aside class="sidebar">
 
+
         <div class="logo">
-            <h2>Jenggo Plio</h2>
+
+            <h2>Hanz</h2>
+
         </div>
+
 
         <nav>
 
+
             <div class="section">
 
+
                 <a href="index.html" class="nav-item">
+
                     <i class="fa-regular fa-user"></i>
+
                     About Me
+
                 </a>
+
 
                 <a href="project.html" class="nav-item active">
+
                     <i class="fa-regular fa-folder"></i>
+
                     Projects
+
                 </a>
+
 
                 <a href="experience.html" class="nav-item">
+
                     <i class="fa-solid fa-briefcase"></i>
+
                     Experience
+
                 </a>
+
 
                 <a href="stack.html" class="nav-item">
+
                     <i class="fa-solid fa-code"></i>
+
                     Stack
+
                 </a>
 
+
             </div>
+
 
             <hr>
 
+
             <div class="section">
 
+
                 <a href="certifications.html" class="nav-item">
+
                     <i class="fa-solid fa-certificate"></i>
+
                     Certifications
+
                 </a>
+
 
                 <a href="affiliations.html" class="nav-item">
+
                     <i class="fa-solid fa-users"></i>
+
                     Affiliations
+
                 </a>
 
+
             </div>
+
 
         </nav>
 
+
     </aside>
 
-    <!-- Main Content -->
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
     <main class="content">
 
-    <h1>Projects</h1>
 
-    <p class="projects-intro">
-        collection ng mga meme games na gawa ko tas ai : P
-    </p>
+        <h1>Projects</h1>
 
 
-    <!-- C++ Cube Project -->
+        <p class="projects-intro">
 
-    <section class="project-card">
+            collection ng mga meme games na gawa ko tas ai : P
 
-        <div class="project-info">
+        </p>
 
-            <span class="project-category">
-                C++ · WebAssembly · 3D Graphics
-            </span>
 
-            <h2>3D Rotating Cube</h2>
 
-            <p>
-                3D cube na may basic na rotation at projection, gamit ang C++ at WebAssembly para sa mabilis na performance sa browser.
-            </p>
+        <!-- ==========================================
+             PROJECT 1
+             SEEDS OF REVIVAL
+        =========================================== -->
 
-            <div class="project-tech">
+        <section class="project-card">
 
-                <span>C++</span>
-                <span>WebAssembly</span>
-                <span>Emscripten</span>
-                <span>JavaScript</span>
+
+            <!-- PROJECT INFORMATION -->
+
+            <div class="project-info">
+
+
+                <span class="project-category">
+
+                    C++ · Godot · 2D Pixel Game
+
+                </span>
+
+
+                <h2>
+
+                    Seeds Of Revival
+
+                </h2>
+
+
+                <p>
+
+                    Seeds of Revival ay isang 2D pixel game na ginawa
+                    gamit ang C++ at Godot engine.
+                    (game is still in development)
+                    ps. di na talaga ginagalaw
+
+                </p>
+
+
+                <a
+                    href="SeedsOfRevival.rar"
+                    class="download-button"
+                    download
+                >
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download Game
+
+                </a>
+
+
+                <div class="project-tech">
+
+                    <span>C++</span>
+
+                    <span>Godot</span>
+
+                    <span>2D Pixel Art</span>
+
+                    <span>Game Development</span>
+
+                </div>
+
 
             </div>
 
-        </div>
 
 
-        <div class="cube-container">
+            <!-- GIF -->
 
-            <canvas
-                id="cubeCanvas"
-                width="800"
-                height="600">
-            </canvas>
+            <div class="project-media">
 
-        </div>
 
-    </section>
+                <img
+                    src="SeedsOfRevival.gif"
+                    alt="Seeds Of Revival gameplay preview"
+                    class="project-gif"
+                >
 
-</main>
-<script>
-    var Module = {
-        onRuntimeInitialized: function () {
-            console.log("C++ WebAssembly loaded!");
-            startCube();
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             PROJECT 2
+             3D ROTATING CUBE
+        =========================================== -->
+
+        <section class="project-card">
+
+
+            <!-- PROJECT INFORMATION -->
+
+            <div class="project-info">
+
+
+                <span class="project-category">
+
+                    C++ · WebAssembly · 3D Graphics
+
+                </span>
+
+
+                <h2>
+
+                    3D Rotating Cube
+
+                </h2>
+
+
+                <p>
+
+                    3D cube na may basic na rotation at projection,
+                    gamit ang C++ at WebAssembly para sa mabilis
+                    na performance sa browser.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>C++</span>
+
+                    <span>WebAssembly</span>
+
+                    <span>Emscripten</span>
+
+                    <span>JavaScript</span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 3D CANVAS -->
+
+            <div class="project-media">
+
+
+                <canvas
+                    id="cubeCanvas3D"
+                    width="800"
+                    height="600"
+                ></canvas>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         WEBASSEMBLY MODULE
+    =========================================== -->
+
+    <script>
+
+        var Module = {
+
+            onRuntimeInitialized: function () {
+
+                console.log("C++ WebAssembly loaded!");
+
+                startCube();
+
+            }
+
+        };
+
+    </script>
+
+
+    <!-- WebAssembly JavaScript -->
+    <script src="cube.js"></script>
+
+
+
+    <!-- ==========================================
+         3D CUBE JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+
+        const canvas =
+            document.getElementById("cubeCanvas3D");
+
+
+        const ctx =
+            canvas.getContext("2d");
+
+
+        let angle = 0;
+
+
+
+        /*
+         * Cube edges
+         */
+
+        const edges = [
+
+            [0, 1, "magenta"],
+            [1, 2, "blue"],
+            [2, 3, "magenta"],
+            [3, 0, "blue"],
+
+            [4, 5, "blue"],
+            [5, 6, "magenta"],
+            [6, 7, "blue"],
+            [7, 4, "magenta"],
+
+            [0, 4, "magenta"],
+            [1, 5, "blue"],
+            [2, 6, "magenta"],
+            [3, 7, "blue"]
+
+        ];
+
+
+
+        /*
+         * Start animation
+         */
+
+        function startCube() {
+
+            requestAnimationFrame(drawCube);
+
         }
-    };
-</script>
-
-<script src="cube.js"></script>
-
-<script>
-
-    const canvas =
-        document.getElementById("cubeCanvas");
-
-    const ctx =
-        canvas.getContext("2d");
-
-    let angle = 0;
 
 
-    const edges = [
 
-        [0, 1, "magenta"],
-        [1, 2, "blue"],
-        [2, 3, "magenta"],
-        [3, 0, "blue"],
+        /*
+         * Draw cube
+         */
 
-        [4, 5, "blue"],
-        [5, 6, "magenta"],
-        [6, 7, "blue"],
-        [7, 4, "magenta"],
-
-        [0, 4, "magenta"],
-        [1, 5, "blue"],
-        [2, 6, "magenta"],
-        [3, 7, "blue"]
-
-    ];
+        function drawCube() {
 
 
-    function startCube()
-    {
-        requestAnimationFrame(drawCube);
-    }
+            /*
+             * Send rotation angle
+             * to C++ WebAssembly
+             */
+
+            Module._project_cube(angle);
 
 
-    function drawCube()
-    {
 
-        Module._project_cube(angle);
+            /*
+             * Clear canvas
+             */
 
+            ctx.fillStyle = "black";
 
-        ctx.fillStyle = "black";
-
-        ctx.fillRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
-
-
-        for (const edge of edges)
-        {
-
-            const a = edge[0];
-            const b = edge[1];
-            const color = edge[2];
+            ctx.fillRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
 
 
-            const ax =
-                Module._get_point_x(a);
 
-            const ay =
-                Module._get_point_y(a);
+            /*
+             * Draw cube edges
+             */
 
-
-            const bx =
-                Module._get_point_x(b);
-
-            const by =
-                Module._get_point_y(b);
+            for (const edge of edges) {
 
 
-            ctx.beginPath();
+                const a = edge[0];
 
-            ctx.moveTo(ax, ay);
+                const b = edge[1];
 
-            ctx.lineTo(bx, by);
+                const color = edge[2];
 
-            ctx.strokeStyle = color;
 
-            ctx.lineWidth = 2;
 
-            ctx.stroke();
+                /*
+                 * Point A
+                 */
+
+                const ax =
+                    Module._get_point_x(a);
+
+                const ay =
+                    Module._get_point_y(a);
+
+
+
+                /*
+                 * Point B
+                 */
+
+                const bx =
+                    Module._get_point_x(b);
+
+                const by =
+                    Module._get_point_y(b);
+
+
+
+                /*
+                 * Draw line
+                 */
+
+                ctx.beginPath();
+
+                ctx.moveTo(ax, ay);
+
+                ctx.lineTo(bx, by);
+
+                ctx.strokeStyle = color;
+
+                ctx.lineWidth = 2;
+
+                ctx.stroke();
+
+            }
+
+
+
+            /*
+             * Rotation speed
+             */
+
+            angle += 0.5;
+
+
+
+            /*
+             * Continue animation
+             */
+
+            requestAnimationFrame(drawCube);
 
         }
 
 
-        angle += 0.5;
+    </script>
 
 
-        requestAnimationFrame(drawCube);
-    }
-
-</script>
 </body>
+
 </html>
