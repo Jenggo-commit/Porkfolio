@@ -82,5 +82,115 @@
 
     </main>
 
+    <!-- Paste before </body> -->
+    <div id="chat-widget" class="chat-widget">
+  <button id="chat-toggle" aria-label="Open chat">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+  <div id="chat-panel" class="chat-panel hidden">
+    <div class="chat-header">
+      <span>Support Bot</span>
+      <button id="chat-close">×</button>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" placeholder="Type your question..." autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+  #chat-toggle {
+    width: 64px; height: 64px; border-radius: 50%;
+    border: none; background: #4A90E2; color: #fff;
+    cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .chat-panel {
+    position: absolute; bottom: 78px; right: 0;
+    width: 320px; height: 420px; background: #fff;
+    border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .chat-panel.hidden { display: none; }
+  .chat-header {
+    background: #4A90E2; color: #fff; padding: 12px 16px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 600;
+  }
+  .chat-header button { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; }
+  .chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+  .msg { max-width: 80%; padding: 8px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
+  .msg.bot { background: #f0f0f0; align-self: flex-start; border-bottom-left-radius: 4px; }
+  .msg.user { background: #4A90E2; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .chat-form { display: flex; border-top: 1px solid #eee; }
+  .chat-form input { flex: 1; border: none; padding: 12px; font-size: 14px; outline: none; }
+  .chat-form button { border: none; background: #4A90E2; color: #fff; padding: 12px 16px; cursor: pointer; }
+</style>
+
+<script>
+(function() {
+  const faqs = [
+    { keywords: ["opening", "launch", "start", "begin", "play", "run", "execute", "open", "game", "how to open", "how to launch", "how to play", "how to run"],
+      answer: "To open the game, simply download the .rar file on your desktop then extract it and double-click the game executable, typically named (GameName).exe" },
+    { keywords: ["setting", "setup", "configure", "install", "prepare", "ready", "get started", "how to start", "how to set up", "how to configure", "how to install"],
+      answer: "To set up the game, download the .rar file on your desktop, extract it, and double-click the game executable, typically named (GameName).exe" },
+    { keywords: ["contact", "support", "help"],
+      answer: "For assistance, you can reach our support team at support@example.com or call us at (555) 123-4567, Mon–Fri 9 AM–5 PM EST." },
+    { keywords: ["price", "cost", "how much", "pricing"],
+      answer: "No current pricing information available. Please check our website or contact support for more details." },
+    { keywords: ["contact", "human", "support", "help", "talk to"],
+      answer: "You can reach our team at support@example.com or call us at (555) 123-4567, Mon–Fri 9 AM–5 PM EST." },
+  ];
+
+  const intro = "Hi! I'm here to help.\n\nWhat can I assist you with? Try asking about Opening the game, Setting it up, or Contacting support.";
+
+  const toggle = document.getElementById('chat-toggle');
+  const panel  = document.getElementById('chat-panel');
+  const close  = document.getElementById('chat-close');
+  const form   = document.getElementById('chat-form');
+  const input  = document.getElementById('chat-input');
+  const msgs   = document.getElementById('chat-messages');
+
+  let started = false;
+
+  function addMsg(text, role) {
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+    div.innerHTML = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function getResponse(text) {
+    const lower = text.toLowerCase();
+    for (const faq of faqs) {
+      if (faq.keywords.some(k => lower.includes(k))) return faq.answer;
+    }
+    return "I'm not sure about that one. Try asking about <b>opening</b>, <b>setting up</b>, or <b>contacting support</b> — or email us at support@example.com.";
+  }
+
+  toggle.onclick = () => {
+    panel.classList.toggle('hidden');
+    if (!started) { addMsg(intro, 'bot'); started = true; }
+    input.focus();
+  };
+  close.onclick = () => panel.classList.add('hidden');
+
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    input.value = '';
+    setTimeout(() => addMsg(getResponse(text), 'bot'), 400);
+  };
+})();
+</script>   
+
 </body>
 </html>
