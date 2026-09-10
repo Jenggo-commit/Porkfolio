@@ -137,416 +137,230 @@
 
     <main class="content">
 
+    <h1>Projects</h1>
 
-        <h1>Projects</h1>
+    <p class="projects-intro">
+        collection ng mga meme games na gawa ko tas ai : P
+    </p>
 
+    <!-- SEARCH & FILTER CONTROLS -->
+    <div class="project-controls">
+        <input 
+            type="text" 
+            id="projectSearch" 
+            placeholder="Search projects by title, tech, or description..." 
+            onkeyup="filterProjects()"
+        >
 
-        <p class="projects-intro">
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-category="all" onclick="toggleFilter('all', this)">All</button>
+            <button class="filter-btn" data-category="pc" onclick="toggleFilter('pc', this)">PC</button>
+            <button class="filter-btn" data-category="mobile" onclick="toggleFilter('mobile', this)">Mobile</button>
+            <button class="filter-btn" data-category="2d" onclick="toggleFilter('2d', this)">2D</button>
+            <button class="filter-btn" data-category="3d" onclick="toggleFilter('3d', this)">3D</button>
+        </div>
+    </div>
 
-            collection ng mga meme games na gawa ko tas ai : P
+    <!-- PC GAMES SECTION -->
+    <section class="game-category-section" id="pc-section">
+        <h2 class="section-title"><i class="fa-solid fa-desktop"></i> PC Games</h2>
 
-        </p>
-
-
-
-        <!-- ==========================================
-             PROJECT 1
-             SEEDS OF REVIVAL
-        =========================================== -->
-
-        <section class="project-card">
-
-
-            <!-- PROJECT INFORMATION -->
-
+        <!-- SEEDS OF REVIVAL -->
+        <article class="project-card" data-platform="pc" data-dimension="2d">
             <div class="project-info">
-
-
-                <span class="project-category">
-
-                    C++ · Godot · 2D Pixel Game
-
-                </span>
-
-
-                <h2>
-
-                    Seeds Of Revival
-
-                </h2>
-
-
+                <span class="project-category">C++ · Godot · 2D Pixel Game</span>
+                <h2>Seeds Of Revival</h2>
                 <p>
-
-                    Seeds of Revival ay isang 2D pixel game na ginawa
-                    gamit ang C++ at Godot engine.
-                    (game is still in development)
-                    ps. di na talaga ginagalaw
-
+                    Seeds of Revival ay isang 2D pixel game na ginawa gamit ang C++ at Godot engine.
+                    (game is still in development) ps. di na talaga ginagalaw
                 </p>
-
-
-                <a
-                    href="SeedsOfRevival.rar"
-                    class="download-button"
-                    download
-                >
-
-                    <i class="fa-solid fa-download"></i>
-
-                    Download Game
-
+                <a href="SeedsOfRevival.rar" class="download-button" download>
+                    <i class="fa-solid fa-download"></i> Download Game
                 </a>
-
-
                 <div class="project-tech">
-
                     <span>C++</span>
-
                     <span>Godot</span>
-
                     <span>2D Pixel Art</span>
-
                     <span>Game Development</span>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- GIF -->
-
             <div class="project-media">
-
-
-                <img
-                    src="SeedsOfRevival.gif"
-                    alt="Seeds Of Revival gameplay preview"
-                    class="project-gif"
-                >
-
-
+                <img src="SeedsOfRevival.gif" alt="Seeds Of Revival gameplay preview" class="project-gif">
             </div>
+        </article>
 
-
-        </section>
-
-
-
-        <!-- ==========================================
-             PROJECT 2
-             3D ROTATING CUBE
-        =========================================== -->
-
-        <section class="project-card">
-
-
-            <!-- PROJECT INFORMATION -->
-
+        <!-- 3D ROTATING CUBE -->
+        <article class="project-card" data-platform="pc" data-dimension="3d">
             <div class="project-info">
-
-
-                <span class="project-category">
-
-                    C++ · WebAssembly · 3D Graphics
-
-                </span>
-
-
-                <h2>
-
-                    3D Rotating Cube
-
-                </h2>
-
-
+                <span class="project-category">C++ · WebAssembly · 3D Graphics</span>
+                <h2>3D Rotating Cube</h2>
                 <p>
-
-                    3D cube na may basic na rotation at projection,
-                    gamit ang C++ at WebAssembly para sa mabilis
-                    na performance sa browser.
-
+                    3D cube na may basic na rotation at projection, gamit ang C++ at WebAssembly para sa mabilis na performance sa browser.
                 </p>
-
-
                 <div class="project-tech">
-
                     <span>C++</span>
-
                     <span>WebAssembly</span>
-
                     <span>Emscripten</span>
-
                     <span>JavaScript</span>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- 3D CANVAS -->
-
             <div class="project-media">
-
-
-                <canvas
-                    id="cubeCanvas3D"
-                    width="800"
-                    height="600"
-                ></canvas>
-
-
+                <canvas id="cubeCanvas3D" width="800" height="600"></canvas>
             </div>
+        </article>
 
-
-        </section>
-
-        <section class="project-card">
-
-
-            <!-- PROJECT INFORMATION -->
-
+        <!-- FETI BIRD -->
+        <article class="project-card" data-platform="pc" data-dimension="2d">
             <div class="project-info">
-
-
-                <span class="project-category">
-
-                    C++ · SFML · 2D Game · Game Development · Microsoft Visual Studio
-
-                </span>
-
-
-                <h2>
-
-                    Feti Bird
-
-                </h2>
-
-
+                <span class="project-category">C++ · SFML · 2D Game · Game Development · Microsoft Visual Studio</span>
+                <h2>Feti Bird</h2>
                 <p>
-
-                    Feti Bird ay isang 2D flappy bird game na ginawa
-                    gamit ang C++ at SFML library.
+                    Feti Bird ay isang 2D flappy bird game na ginawa gamit ang C++ at SFML library.
                     (game is still in development)
-
                 </p>
-
-
-                <a
-                    href="FetiBird.rar"
-                    class="download-button"
-                    download
-                >
-
-                    <i class="fa-solid fa-download"></i>
-
-                    Download Game
-
+                <a href="FetiBird.rar" class="download-button" download>
+                    <i class="fa-solid fa-download"></i> Download Game
                 </a>
-
-
                 <div class="project-tech">
-
                     <span>C++</span>
-
                     <span>SFML</span>
-
                     <span>2D Game</span>
-
                     <span>Game Development</span>
-
                     <span>Microsoft Visual Studio</span>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- GIF -->
-
             <div class="project-media">
-
-
-                <img
-                    src="FetiBird.gif"
-                    alt="Feti Bird gameplay preview"
-                    class="project-gif"
-                >
-
-
+                <img src="FetiBird.gif" alt="Feti Bird gameplay preview" class="project-gif">
             </div>
+        </article>
 
-
-        </section>
-
-        <section class="project-card">
-
-
-            <!-- PROJECT INFORMATION -->
-
+        <!-- FCU PUNCH -->
+        <article class="project-card" data-platform="pc" data-dimension="2d">
             <div class="project-info">
-
-
-                <span class="project-category">
-
-                    C++ · SFML · 2D Game · Game Development · Microsoft Visual Studio
-
-                </span>
-
-
-                <h2>
-
-                    FCU Punch
-
-                </h2>
-
-
+                <span class="project-category">C++ · SFML · 2D Game · Game Development · Microsoft Visual Studio</span>
+                <h2>FCU Punch</h2>
                 <p>
-
-                    FCU Punch ay isang 2D fighting game na ginawa
-                    gamit ang C++ at SFML library.
+                    FCU Punch ay isang 2D fighting game na ginawa gamit ang C++ at SFML library.
                     (game is still in development)
-
                 </p>
-
-
-                <a
-                    href="FCUPunch.rar"
-                    class="download-button"
-                    download
-                >
-
-                    <i class="fa-solid fa-download"></i>
-
-                    Download Game
-
+                <a href="FCUPunch.rar" class="download-button" download>
+                    <i class="fa-solid fa-download"></i> Download Game
                 </a>
-
-
                 <div class="project-tech">
-
                     <span>C++</span>
-
                     <span>SFML</span>
-
                     <span>2D Game</span>
-
                     <span>Game Development</span>
-
                     <span>Microsoft Visual Studio</span>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- GIF -->
-
             <div class="project-media">
-
-
-                <img
-                    src="FCUPunch.gif"
-                    alt="FCU Punch gameplay preview"
-                    class="project-gif"
-                >
-
-
+                <img src="FCUPunch.gif" alt="FCU Punch gameplay preview" class="project-gif">
             </div>
+        </article>
+    </section>
 
+    <!-- MOBILE GAMES SECTION -->
+    <section class="game-category-section" id="mobile-section">
+        <h2 class="section-title"><i class="fa-solid fa-mobile-screen-button"></i> Mobile Games</h2>
 
-        </section>
-
-        <section class="project-card">
-
-
-            <!-- PROJECT INFORMATION -->
-
+        <!-- STIKMP -->
+        <article class="project-card" data-platform="mobile" data-dimension="2d">
             <div class="project-info">
-
-
-                <span class="project-category">
-
-                    C++ · SDL3 · Punching Game · Game Development · Microsoft Visual Studio
-
-                </span>
-
-
-                <h2>
-
-                    StikMP
-
-                </h2>
-
-
+                <span class="project-category">C++ · SDL3 · Punching Game · Game Development · Microsoft Visual Studio</span>
+                <h2>StikMP</h2>
                 <p>
-
-                    StikMP ay isang 2D punching game na ginawa
-                    gamit ang C++ at SDL3 library.
+                    StikMP ay isang 2D punching game na ginawa gamit ang C++ at SDL3 library.
                     (game is still in development)
-
                 </p>
-
-
-                <a
-                    href="StikMP.apk"
-                    class="download-button"
-                    download
-                >
-
-                    <i class="fa-solid fa-download"></i>
-
-                    Download Game
-
+                <a href="StikMP.apk" class="download-button" download>
+                    <i class="fa-solid fa-download"></i> Download APK
                 </a>
-
-
                 <div class="project-tech">
-
                     <span>C++</span>
-
                     <span>SDL3</span>
-
                     <span>2D Game</span>
-
                     <span>Game Development</span>
-
                     <span>Microsoft Visual Studio</span>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- GIF -->
-
             <div class="project-media">
-
-
-                <img
-                    src="StikMP.gif"
-                    alt="StikMP gameplay preview"
-                    class="project-gif"
-                >
-
-
+                <img src="StikMP.gif" alt="StikMP gameplay preview" class="project-gif">
             </div>
+        </article>
+    </section>
 
+</main>
 
-        </section>
+<script>
+        const activeFilters = new Set();
 
+        function toggleFilter(category, btnElement) {
+            if (category === 'all') {
+                activeFilters.clear();
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                btnElement.classList.add('active');
+            } else {
+                const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+                if (allBtn) allBtn.classList.remove('active');
 
-    </main>
+                if (activeFilters.has(category)) {
+                    activeFilters.delete(category);
+                    btnElement.classList.remove('active');
+                } else {
+                    activeFilters.add(category);
+                    btnElement.classList.add('active');
+                }
+
+                if (activeFilters.size === 0 && allBtn) {
+                    allBtn.classList.add('active');
+                }
+            }
+
+            filterProjects();
+        }
+
+        function filterProjects() {
+            const query = document.getElementById('projectSearch').value.toLowerCase();
+            const sections = document.querySelectorAll('.game-category-section');
+
+            sections.forEach(section => {
+                const cards = section.querySelectorAll('.project-card');
+                let visibleCardCount = 0;
+
+                cards.forEach(card => {
+                    const platform = card.getAttribute('data-platform');
+                    const dimension = card.getAttribute('data-dimension');
+                    const contentText = card.innerText.toLowerCase();
+
+                    // Check if card meets ALL active filter conditions
+                    let matchesCategories = true;
+                    activeFilters.forEach(filter => {
+                        if (filter !== platform && filter !== dimension) {
+                            matchesCategories = false;
+                        }
+                    });
+
+                    // Search input check
+                    const matchesSearch = contentText.includes(query);
+
+                    if (matchesCategories && matchesSearch) {
+                        card.style.display = "flex";
+                        visibleCardCount++;
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+                // Hide section heading if zero cards match inside that section
+                if (visibleCardCount > 0) {
+                    section.style.display = "block";
+                } else {
+                    section.style.display = "none";
+                }
+            });
+        }
+    </script>
 
 
 
